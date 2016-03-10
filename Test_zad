@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace S_tr
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double s = 0;
+
+            double a_side, b_side, c_side;
+
+            Console.WriteLine("введите стороны треугольника");
+            a_side = double.Parse( Console.ReadLine());
+            b_side = Convert.ToDouble(Console.ReadLine());
+            c_side = double.Parse(Console.ReadLine());
+ 
+
+                if (a_side > b_side && a_side > c_side)
+                {                  
+                    s = (b_side * c_side) / 2;
+                }
+                if (b_side > a_side && b_side > c_side)
+                {
+                    s = (a_side * c_side) / 2;
+                }
+                if (c_side > b_side && c_side > a_side)
+                {
+                    s = (a_side * b_side) / 2;
+                }
+
+            Console.WriteLine("площадь треугольника ={0}", s);
+            Console.ReadKey();
+        }
+    }
+}
