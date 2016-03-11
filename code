@@ -1,0 +1,28 @@
+  public string GetOpt(string dir, string FileName)
+      {
+          StreamReader objReader = new StreamReader(dir + "\\" + FileName, Encoding.Default);
+          string sLine = "";
+          ArrayList arrText = new ArrayList();
+          int l = 0;
+          
+          while (sLine != null)
+          {
+              sLine = objReader.ReadLine();
+              if (sLine != null)
+                  arrText.Add(sLine);
+          }
+          objReader.Close();
+          objReader.Close();
+          string ret = "";
+          
+          foreach (string sOutput in arrText)
+          {
+              if (sOutput.ToString().Trim() == "Диапозон Чисел" || sOutput.ToString().Trim() == "Настройки Таймера" || sOutput.ToString().Trim() == "показывать таймер" || sOutput.ToString().Trim() == "Настройки Таймера" || sOutput.ToString().Trim() == "минут" || sOutput.ToString().Trim() == "От" || sOutput.ToString().Trim() == "секунд")
+              {
+                  ret += sOutput + "#";
+              }
+              else
+                  ret += sOutput + "$";
+          }
+          return ret;
+      }
